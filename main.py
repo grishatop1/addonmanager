@@ -71,7 +71,6 @@ class Api:
 		self.window.destroy()
 
 	def rungmod(self):
-		print(self.parent.gmod_path+"Garrys_Mod.exe")
 		os.startfile(self.parent.gmod_path+"Garrys_Mod.exe")
 
 	def openexplorer(self):

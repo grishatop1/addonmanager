@@ -51,6 +51,10 @@ async function loadAddons(addons) {
         header_node.textContent = active[i]
         item_node.appendChild(header_node)
         document.getElementById("active-column").appendChild(item_node)
+
+        item_node.addEventListener('click', function(){
+            moveAddon(this, "inactive")
+        });
     }
 
     for (let i = 0; i < inactive.length; i++) {
@@ -60,12 +64,31 @@ async function loadAddons(addons) {
         header_node.textContent = inactive[i]
         item_node.appendChild(header_node)
         document.getElementById("inactive-column").appendChild(item_node)
+
+        item_node.addEventListener('click', function(){
+            moveAddon(this, "active")
+        });
+
     }
     
 }
 
-function moveAddon(name, to) {
+function moveAddon(item_node, to) {
+    if (to == "active") {
+        var opposite = "inactive"
+    } else {
+        var opposite = "active"
+    }
+
+    var item_node_clone = item_node.cloneNode(true)
+    document.getElementById(to+"-column").appendChild(item_node_clone)
+    document.getElementById(opposite+"-column").removeChild(item_node)
+
+    item_node_clone.addEventListener('click', function(){
+        moveAddon(item_node_clone, opposite)
+    });
     
+    alertify.success(item_node_clone.children[0].innerText + " was moved to " + to)
 }
 
 //LOADING

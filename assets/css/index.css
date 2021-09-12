@@ -234,7 +234,7 @@ p {
     background-color: royalblue;
     padding: 10px 0px;
     border-radius: 100px;
-    cursor: grab;
+    cursor: pointer;
     margin: 5px 10px;
 }
 
