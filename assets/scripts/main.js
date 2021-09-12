@@ -3,6 +3,7 @@ window.addEventListener('pywebviewready', function() {
         pywebview.api.prestart().then(function(data){
             if (data[0]) {
                 showPathPage()
+                hideLoading()
             } else {
                 showMainPage()
                 loadAddons(data[1]).then(hideLoading())
@@ -32,6 +33,7 @@ function Go() {
         pywebview.api.initialStart()
         setTimeout(function(){
             showMainPage()
+            hideLoading()
         }, 1000)
     } else {
         alertify.error('Bad addons folder path...');
