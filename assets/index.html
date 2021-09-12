@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addon Manager</title>
+
+    <script src="scripts/jq.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- ALERTIFY -->
+    <script src="scripts/alertifyjs/alertify.js"></script>
+    <link rel="stylesheet" href="scripts/alertifyjs/css/alertify.min.css" />
+    <link rel="stylesheet" href="scripts/alertifyjs/css/themes/default.css" />
+</head>
+<body>
+    <div class="loading">
+        <h1>LOADING</h1>
+        <img src="media/loading.gif">
+    </div>
+
+    <div class="path-page" style="display: none;">
+        <div class="path-form">
+            <h1>GARRY'S MOD ADDON MANAGER</h1>
+            <p>
+                Hi, please select path to gmod <b>addons</b> folder!
+            </p>
+            <button class="modern-field" onclick="openFileDialog()" id="addonpathfield">C:\Games\GarrysMod\garrysmod\addons  <-- this is an example path</button>
+            <button class="modern-button" onclick="Go()" id="goBtn">GO</button>
+        </div>
+    </div>
+
+    <div class="main-page">
+        <div class="main-header">
+            <div class="main-header-title pywebview-drag-region">
+                <h1>ADDON MANAGER</h1>
+            </div>
+            <div class="main-header-exitblock">
+                <button onclick="exitButton()">x</button>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main-columns">
+                <div class="column">
+                    <div class="column-header">
+                        <h2>inactive</h2>
+                    </div>
+                    <div class="column-content" id="inactive-column">
+                        <div class="column-item">
+                            <h3>Advanced Duplicator2</h3>
+                        </div>
+                        <div class="column-item">
+                            <h3>NakedAlyx18+</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-header">
+                        <h2>active</h2>
+                    </div>
+                    <div class="column-content" id="active-column">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="main-buttons">
+                <div class="main-button" onclick="rungmod()">
+                    <h4>Run Garry's Mod</h4>
+                </div>
+                <div class="main-button" onclick="openexplorer()">
+                    <h4>Open addons folder</h4>
+                </div>
+                <div class="main-button">
+                    <h4>Remove all addons</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
