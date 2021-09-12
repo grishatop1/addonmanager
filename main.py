@@ -3,6 +3,10 @@ import webview
 import os
 import pickle
 import subprocess
+import shutil
+import logging
+
+logging.basicConfig(filename='example.log', level=logging.DEBUG)
 
 class App:
 	def __init__(self) -> None:
@@ -75,6 +79,15 @@ class Api:
 
 	def openexplorer(self):
 		subprocess.Popen(fr'explorer /select,"{self.parent.addons_path}"')
+
+	def moveAddon(self, data):
+		name, to = data
+		name = "\\" + name
+		print(self.parent.aoffdons_path+name)
+		if to == "active":
+			shutil.move(self.parent.aoffdons_path+name,self.parent.addons_path+name)
+		else:
+			shutil.move(self.parent.addons_path+name,self.parent.aoffdons_path+name)
 
 
 if __name__ == '__main__':

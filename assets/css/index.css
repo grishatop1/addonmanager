@@ -230,6 +230,11 @@ p {
     overflow-y: scroll;
 }
 
+.column-content-pulse-animated {
+    animation: pulse-effect-content;
+    animation-duration: 0.4s;
+}
+
 .column-item {
     background-color: royalblue;
     padding: 10px 0px;
@@ -270,4 +275,13 @@ p {
 .main-button:hover {
     background-color: rgb(104, 137, 236);
     padding: 25px 35px;
+}
+
+@keyframes pulse-effect-content {
+    from {
+        background-color: white;
+    }
+    to {
+        background-color: #2f2f2f;
+    }
 }

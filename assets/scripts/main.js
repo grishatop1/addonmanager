@@ -88,6 +88,8 @@ function moveAddon(item_node, to) {
         moveAddon(item_node_clone, opposite)
     });
     
+    pywebview.api.moveAddon([item_node_clone.innerText, to])
+
     alertify.success(item_node_clone.children[0].innerText + " was moved to " + to)
 }
 
@@ -120,4 +122,12 @@ function rungmod() {
 
 function openexplorer() {
     pywebview.api.openexplorer()
+}
+
+//ANIMATIONS
+function doPulse(column_type) {
+    $("#" + column_type).addClass("column-content-pulse-animated")
+    $("#" + column_type).on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+        $(this).removeClass("column-content-pulse-animated");
+   });
 }
